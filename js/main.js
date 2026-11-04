@@ -11,7 +11,16 @@ document.addEventListener('click', function (e) {
 });
 window.addEventListener('pageshow', function () { document.body.classList.remove('leaving'); });
 
-// 2. Gallery: builds each <figure data-src data-cap> and shows a placeholder until the image exists
+
+// 2. Project hero background: use the first project image with a dark overlay.
+document.querySelectorAll('body.project article').forEach(function (article) {
+  var firstFigure = article.querySelector('.gallery figure[data-src]');
+  if (firstFigure && firstFigure.dataset.src) {
+    article.style.setProperty('--project-bg', 'url("' + firstFigure.dataset.src + '")');
+  }
+});
+
+// 3. Gallery: builds each <figure data-src data-cap> and shows a placeholder until the image exists
 document.querySelectorAll('.gallery figure').forEach(function (f) {
   var src = f.dataset.src, cap = f.dataset.cap || '';
   var img = new Image();
@@ -27,7 +36,7 @@ document.querySelectorAll('.gallery figure').forEach(function (f) {
   img.src = src;
 });
 
-// 3. Gentle scroll reveal
+// 4. Gentle scroll reveal
 var items = document.querySelectorAll('.gallery figure, .list li, .grid > div');
 items.forEach(function (el) { el.classList.add('reveal'); });
 if ('IntersectionObserver' in window) {
