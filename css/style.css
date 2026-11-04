@@ -1,4 +1,4 @@
-:root{--bg:#f4f6f6;--fg:#1c2a31;--mut:#5d6e76;--acc:#2f566c;--line:#d3dcdf;--card:#fff}
+:root{--bg:#F1F4F2;--fg:#263C3B;--mut:#687A75;--acc:#6D9186;--line:#D8E1DC;--card:#FFFFFF}
 @media (prefers-color-scheme:dark){:root{--bg:#0d0f0f;--fg:#e6ecee;--mut:#8fa2aa;--acc:#7fa6b8;--line:#223037;--card:#141a1c;color-scheme:dark}}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
